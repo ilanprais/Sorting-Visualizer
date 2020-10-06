@@ -2,8 +2,10 @@
 
 ## Requirements
 
-simple webpage design using html and css. webpage code using javascript.
-website visuaizing *sorting algorithms*.
+Simple webpage design using html and css. Webpage code using javascript.
+website visuaizing *Sorting Algorithms*.
+
+Website name - VisualSort
 
 **Algorithms to support:**
 - Bubble Sort
@@ -25,4 +27,8 @@ website visuaizing *sorting algorithms*.
   - new array
   - array size
   - Reverse
+  
+**On Display Stats:**
+- time complexity
+- comparisons
   
