@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+    font-family: "Montserrat";
+    font-size: 1vw;
+}
+
+.top{
+    width: 20%;
+    margin-top: 1.3%;
+    margin-left: 1.3%;
+    background-color: white;
+    padding-right: 75%;
+    padding-bottom: 1.3%;
+    border-bottom: 2px rgba(226, 226, 231, 0.918) solid;     
+
+}
+
+.menu{
+    float: left;
+}
+
+.controls{
+
+}
+
+.button{
+    margin: 0.15vw;
+    width: 13vw;
+    height: 30px;
+    border: rgba(38,113,221,1);
+    border: 2px linear-gradient(90deg, rgba(37,76,145,0.9308765742625175) 30%, rgba(38,113,221,1) 64%, rgba(30,156,255,0.9420810560552346) 100%) solid;
+    margin-bottom: 0.8vw;
+    background-color: white;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.15em;
+    outline: none;
+}
+
+input[name="runBtn"]{
+  margin-left: 1.5vw;
+  margin-top: 1.2vw;
+  font-size: 1.5em;
+  font-family: "Montserrat";
+  background: rgb(39,62,143);
+  background: linear-gradient(90deg, rgba(39,62,143,1) 29%, rgba(39,83,176,1) 68%, rgba(13,70,210,0.9420810560552346) 100%);  
+  color: white;
+  height: 45px; 
+}
+
+input[name="runBtn"]:hover{
+    color:rgb(39,62,143);
+    background: white;
+    border: 2px rgb(39,62,143) solid;
+}
+
+input[name="runBtn"]:visited{
+    color:rgb(39,62,143);
+    background: white;
+    border: 2px rgb(39,62,143) solid;
+}
+
+
+input[name="pBtn"]{
+    width: 3.95vw;
+    background-image: url(../images/play.png);
+    background-size: 1.1vw;
+    border:2px rgb(39,62,143) solid;
+}
+
+input[name="rBtn"]{
+    margin-left: 1.5vw;
+    width: 3.95vw;
+    background-image: url(../images/backward.png);
+    background-size: 1.8vw;
+    border:2px rgb(39,62,143) solid;
+}
+
+input[name="fBtn"]{
+    width: 3.95vw;
+    background-image: url(../images/forward.png);
+    background-size: 1.8vw;
+    background-size: 1.8vw;
+    border:2px rgb(39,62,143) solid;
+}
+
+.slider{
+    margin-left: 1.5vw;
+    width: 13vw;
+    color: rgb(39,62,143);
+}
+
+.bottom{
+    color: white;
+    font-size: 0.7vw;
+    background: rgb(37,76,145);
+    background: linear-gradient(90deg, rgba(37,76,145,0.9308765742625175) 30%, rgba(38,113,221,1) 64%, rgba(30,156,255,0.9420810560552346) 100%);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 5px;
+    padding-left: 6px;
+    width: 100%;
+    height: auto;
+}
