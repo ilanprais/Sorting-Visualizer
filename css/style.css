@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Montserrat";
 }
 
 body{
@@ -24,10 +25,6 @@ body{
     float: left;
 }
 
-.controls{
-
-}
-
 .button{
     margin: 0.15vw;
     width: 13vw;
@@ -41,13 +38,13 @@ body{
     background-position: center;
     border-radius: 0.15em;
     outline: none;
+    cursor: pointer;
 }
 
 input[name="runBtn"]{
   margin-left: 1.5vw;
   margin-top: 1.2vw;
   font-size: 1.5em;
-  font-family: "Montserrat";
   background: rgb(39,62,143);
   background: linear-gradient(90deg, rgba(39,62,143,1) 29%, rgba(39,83,176,1) 68%, rgba(13,70,210,0.9420810560552346) 100%);  
   color: white;
@@ -66,35 +63,135 @@ input[name="runBtn"]:visited{
     border: 2px rgb(39,62,143) solid;
 }
 
-
-input[name="pBtn"]{
-    width: 3.95vw;
-    background-image: url(../images/play.png);
-    background-size: 1.1vw;
-    border:2px rgb(39,62,143) solid;
-}
-
-input[name="rBtn"]{
+.title{
     margin-left: 1.5vw;
-    width: 3.95vw;
-    background-image: url(../images/backward.png);
-    background-size: 1.8vw;
-    border:2px rgb(39,62,143) solid;
-}
-
-input[name="fBtn"]{
-    width: 3.95vw;
-    background-image: url(../images/forward.png);
-    background-size: 1.8vw;
-    background-size: 1.8vw;
-    border:2px rgb(39,62,143) solid;
+    margin-bottom: -0.3vw;
+    width: 13vw;
+    height: 2vw;
+    background-color: white;
+    text-align: center;
 }
 
 .slider{
     margin-left: 1.5vw;
     width: 13vw;
-    color: rgb(39,62,143);
+    -webkit-appearance: none;
+    height: 2vw;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2vw;
+    height: 2vw;
+    background: rgb(39,62,143);
+    cursor: pointer;
+}
+
+.slider:hover {
+        opacity: 1;
+}
+
+.title2{
+    margin-bottom: 0vw;
+    margin-top: -0.7vw;
+    width: 13vw;
+    height: 2vw;
+    background-color: white;
+    text-align: center;
+}
+
+.algos{
+    list-style-type: none;
+    margin-top: 1.5vw;
+    margin-left: 1.5vw;
+}
+
+.algos li {
+    float: left;
+    width: 6.2vw;
+    height: 4.2vw;
+    margin-right: 0.6vw;
+    margin-bottom: 0.6vw;
+    position: relative;
+  }
+
+.algos label, .algos input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.algos label {
+    color:rgb(39,62,143);
+    background: white;
+    border: 2px rgb(39,62,143) solid;
+    border-radius: 0.15em;
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 0.55vw;
+}
+
+.algos input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+}
+  
+.algos input[type="radio"]:checked+label,
+  .Checked+label {
+    background: rgb(39,62,143);
+    background: linear-gradient(90deg, rgba(39,62,143,1) 29%, rgba(39,83,176,1) 68%, rgba(13,70,210,0.9420810560552346) 100%);  
+    color: white;
+}
+
+.title3{
+    margin-left: 1.5vw;
+    width: 13vw;
+    height: 2vw;
+    background-color: white;
+    text-align: center;
+}
+
+.array .button{
+    margin-left: 1.5vw;
+    margin-top: 1.8vw;
+    font-size: 1.5em;
+    background-color: #313649;
+    color: white;
+    height: 30px; 
+}
+
+.array .button:hover{
+    color:#313649;
+    background: white;
+    border: 2px #313649 solid;
+}
+
+.array .slider{
+    margin-top: 1.6vw;
+}
+
+.array .slider::-webkit-slider-thumb {
+    background: #313649;
+}
+
+.array input[name="arrayBtn"]{
+    margin-top: 1vw;
+}
+
+.array input[name="flipBtn"]{
+    margin-top: 0.3vw;
+}
+
 
 .bottom{
     color: white;
