@@ -15,7 +15,9 @@
 <body>
     <header id="header">
         <!--Top Banner-->
-        <img class="top" src="images/main.png" alt="banner failed to upload">
+        <a href="index.html" >
+            <img class="top" src="images/main.png" alt="banner failed to upload">
+        </a>
     </header>
     <main>
         <!--Side Menu-->
@@ -23,27 +25,51 @@
                 <div class = "controls">
                     <input class="button" type="submit" value="Visualize!" name="runBtn">
                     <br/>
-                    <input class="button" type="submit" value="" name="rBtn">
-                    <input class="button" type="submit" value="" name="pBtn">
-                    <input class="button" type="submit" value="" name="fBtn">
+                    <div class="title">
+                        <p>Animation Speed</p>
+                    </div> 
+                    <input class="slider" type="range" min="1" max="100" value="50" name="rnBtn">
+                </div>
+                <ul class = "algos">
+                    <p class="title2">Sorting Algorithm</p>
+                    <li>
+                        <input class="radio" type="radio" id="BubbleSort" name="sortBtn" checked="checked">
+                        <label for="BubbleSort">Bubble Sort</label>
+                    </li>
+                    <li>
+                        <input class="radio" type="radio" id="InsertionSort" name="sortBtn">
+                        <label for="InsertionSort">Insertion Sort</label>
+                    </li>
                     <br/>
-                    <input class="slider" type="range" name="rnBtn">
-                </div>
-                <div class = "algos">
-                    <ul>
-                        <li>item 1</li>
-                        <li>item 2</li>
-                        <li>item 3</li>
-                        <li>item 4</li>
-                    </ul>
-                </div>
+                    <li>
+                        <input class="radio" type="radio" id="SelectionSort" name="sortBtn">
+                        <label for="SelectionSort">Selection Sort</label>
+                    </li>
+                    <li>
+                        <input class="radio" type="radio" id="MergeSort" name="sortBtn">
+                        <label for="MergeSort">Merge Sort</label>
+                    </li>
+                    <br/>
+                    <li>
+                        <input class="radio" type="radio" id="QuickSort" name="sortBtn">
+                        <label for="QuickSort">Quick Sort</label>
+                    </li>
+                    <li>
+                        <input class="radio" type="radio" id="HeapSort" name="sortBtn">
+                        <label for="HeapSort">Heap Sort</label>
+                    </li>
+                    <br/>
+                </ul>
                 <div class = "array">
-                    <ul>
-                        <li>item 1</li>
-                        <li>item 2</li>
-                        <li>item 3</li>
-                        <li>item 4</li>
-                    </ul>
+                    <div class="title3">
+                        <p>Array Size</p>
+                    </div> 
+                    <input class="slider" type="range" min="1" max="100" value="50" name="rnBtn">
+                    <br/>
+                    <input class="button" type="submit" value="New Array" name="arrayBtn">
+                    <br/>
+                    <input class="button" type="submit" value="flip Array" name="flipBtn">
+                    <br/>
                 </div>
             </aside>
         <!--Main Window-->
