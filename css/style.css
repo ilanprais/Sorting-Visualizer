@@ -29,7 +29,7 @@ body{
     width: 13vw;
     height: 3.2vw;
     border: rgba(38,113,221,1);
-    border: 2px linear-gradient(90deg, rgba(37,76,145,0.9308765742625175) 30%, rgba(38,113,221,1) 64%, rgba(30,156,255,0.9420810560552346) 100%) solid;
+    border: 0.2vw linear-gradient(90deg, rgba(37,76,145,0.9308765742625175) 30%, rgba(38,113,221,1) 64%, rgba(30,156,255,0.9420810560552346) 100%) solid;
     margin-bottom: 0.8vw;
     background-color: white;
     background-position: center; 
@@ -38,6 +38,7 @@ body{
     border-radius: 0.15em;
     outline: none;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 input[name="runBtn"]{
@@ -52,7 +53,7 @@ input[name="runBtn"]{
 input[name="runBtn"]:hover{
     color:rgb(39,62,143);
     background: white;
-    border: 2px rgb(39,62,143) solid;
+    border: 0.2vw rgb(39,62,143) solid;
 }
 
 input[name="runBtn"]:visited{
