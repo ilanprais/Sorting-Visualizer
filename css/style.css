@@ -192,6 +192,15 @@ input[name="runBtn"]:visited{
     margin-top: 0.3vw;
 }
 
+.seperator{
+    border-left: 2px rgba(226, 226, 231, 0.918) solid;
+    height: 77%;
+    position: absolute;
+    left: 16.5%;
+    margin-left: -3px;
+    top: 17%;
+}
+
 
 .bottom{
     color: white;
