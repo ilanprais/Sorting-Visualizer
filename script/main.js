@@ -9,19 +9,21 @@ var wcomplexityText = document.getElementById("wcomplexity");
 var scomplexityText = document.getElementById("scomplexity");
 var comparisonsText = document.getElementById("comparisons");
 var barDiv = document.querySelector(".bars");
+var bars = document.querySelectorAll(".bar");
 var running = false;
-var arraySize = arraySize = 2 + Number(sizeSlider.value)*3;;
+var arraySize = arraySize = 2 + Number(sizeSlider.value)*3;
+var interval = 5;
 
 main();
 
 function main(){
 
-    var run = runBubbleSort;
+    var sorter = bubbleSorter;
     var stats = ["O(n" + "2".sup() + ")", "O(n" + "2".sup() + ")", "O(1)"];
 
     algorithms ={
         //index: name, algorithm function, average cmplx, worst cmplx, space cmplx
-        0: ["Bubble Sort", runBubbleSort, "O(n" + "2".sup() + ")", "O(n" + "2".sup() + ")", "O(1)"],
+        0: ["Bubble Sort", bubbleSorter, "O(n" + "2".sup() + ")", "O(n" + "2".sup() + ")", "O(1)"],
         1: ["Insertion Sort", runInsertionSort, "O(n" + "2".sup() + ")", "O(n" + "2".sup() + ")", "O(1)"],
         2: ["Selection Sort", runSelectionSort, "O(n" + "2".sup() + ")", "O(n" + "2".sup() + ")", "O(1)"],
         3: ["Merge Sort", runMergeSort, "O(nlog(n))", "O(nlog(n))", "O(n)"],
@@ -33,7 +35,7 @@ function main(){
 
     for(let i = 0; i < 6; ++i){
         algoBtns[i].addEventListener("change", function(){
-            run = algorithms[i][1];
+            sorter = algorithms[i][1];
             updateStats([algorithms[i][2], algorithms[i][3], algorithms[i][4]]);
         });
     }
@@ -43,13 +45,13 @@ function main(){
     });
 
     sizeSlider.addEventListener("click", function(){
-        arraySize = 2 + Number(sizeSlider.value)*3;
+        arraySize = 1 + Number(sizeSlider.value)*3;
     });
 
     flipBtn.addEventListener("click", flipArray);
 
     runBtn.addEventListener("click", function(){
-        runAnimation(run, stats);
+        runAnimation(sorter);
     });
 
     return 0;
@@ -70,37 +72,38 @@ function initArray(amount){
         div.style.height = Math.floor(72*Math.random() + 5) + "%"
         barDiv.appendChild(div);
     } 
+
+    bars = document.querySelectorAll(".bar");
 }
 
 function flipArray(){
-    var bars = document.getElementsByClassName("bar");
     console.log(bars);
     for(let i = 0; i < bars.length/2 ; ++i){
-       var temp = bars[i].style.marginLeft;
-       bars[i].style.marginLeft = bars[bars.length - i - 1].style.marginLeft;
-       bars[bars.length - i - 1].style.marginLeft = temp;
+       var temp = bars[i].style.height;
+       bars[i].style.height = bars[bars.length - i - 1].style.height;
+       bars[bars.length - i - 1].style.height = temp;
     } 
 }
 
-function runAnimation(run){
+function runAnimation(sorter){
     if(running){
-        running = false;
-        runBtn.value = "Visualize!";
+        finishAnimation();
     }
     else{
         running = true;
         runBtn.value = "Stop";
         disableButtons();
-        run();   
-        setTimeout(() => {
-
-            running = false;
-            runBtn.value = "Visualize!";
-            enableButtons()
-
-        }, 4000);
-
+        animation = new Visualizer(sorter); 
+        animation.runAnimation(); 
+        setTimeout(finishAnimation, interval*animation.swaps.length);
     }  
+}
+
+function finishAnimation(){
+    console.log("finishing")
+    running = false;
+    runBtn.value = "Visualize!";
+    enableButtons();
 }
 
 function updateStats(cmplx){
@@ -129,8 +132,20 @@ function enableButtons(){
     sizeSlider.disabled = false;
 }
 
-function runBubbleSort(){
-    console.log("in bubble");
+function bubbleSorter(array){
+    var swaps = [];
+    var len = array.length;
+    for (let i = 0; i < len; ++i) {
+        for (let j = 0; j < len; ++j) {
+            if (array[j] > array[j + 1]) {
+                swaps.push([j, j + 1]);
+                var tmp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tmp;
+            }
+        }
+    }
+    return swaps;
 }
 
 function runInsertionSort(){
@@ -151,5 +166,54 @@ function runQuickSort(){
 
 function runHeapSort(){
     console.log("in heap");
+}
+
+
+
+class Visualizer{
+
+    constructor(sortFunc){
+        this.sortFunc = sortFunc;
+        this.swaps = [];
+    }
+
+    runSort(){
+        var array = [];
+        for(var bar of bars){
+            var str = bar.style.height;
+            str = str.substr(0, str.length - 1);
+            array.push(Number(str));
+        }
+        console.log(array);
+        this.swaps = this.sortFunc(array);
+    }
+
+    runAnimation(){
+        this.runSort();
+        
+        var i = 0;
+        var swaps = this.swaps;
+        var id = setInterval(doSwap, interval);
+
+        function doSwap(){
+            if(i > 1){
+                bars[swaps[i-1][0]].style.borderColor = "rgba(0, 0, 255, 0.596)";
+                bars[swaps[i-1][1]].style.borderColor = "rgba(0, 0, 255, 0.596)";
+            }
+            if(i >= swaps.length || !running){
+                console.log("in");
+                clearInterval(id);
+                return;
+            }
+            bars[swaps[i][0]].style.borderColor = "black";
+            bars[swaps[i][1]].style.borderColor = "black";
+            var temp = bars[swaps[i][1]].style.height;
+            bars[swaps[i][1]].style.height = bars[swaps[i][0]].style.height;
+            bars[swaps[i][0]].style.height = temp;
+            i++;
+            comparisonsText.textContent = "Comparisons: " + i; 
+            console.log("end");
+        }
+    }
 }
 
