@@ -8,6 +8,7 @@ var complexityText = document.getElementById("complexity");
 var comparisonsText = document.getElementById("comparisons");
 var barDiv = document.querySelector(".bars");
 var running = false;
+var arraySize = 30;
 
 main();
 
@@ -25,7 +26,7 @@ function main(){
         5: ["Heap Sort", runHeapSort, "O(nlog(n))"],
     };
 
-    initArray(30);
+    initArray(arraySize);
 
     for(let i = 0; i < 5; ++i){
         algoBtns[i].addEventListener("change", function(){
@@ -35,7 +36,12 @@ function main(){
     }
 
     arrayBtn.addEventListener("click", function(){
-        initArray(30);
+        initArray(arraySize);
+    });
+
+    sizeSlider.addEventListener("click", function(){
+        arraySize = 2 + Number(sizeSlider.value)*2;
+        console.log(sizeSlider.value);
     });
 
     runBtn.addEventListener("click", function(){
