@@ -250,7 +250,7 @@ input[name="runBtn"]:visited{
     color: white;
     font-size: 0.7vw;
     background: rgb(37,76,145);
-    background: linear-gradient(90deg, rgba(37,76,145,0.9308765742625175) 30%, rgba(38,113,221,1) 64%, rgba(30,156,255,0.9420810560552346) 100%);
+    background: linear-gradient(90deg, rgb(37,76,145) 30%, rgb(38,113,221) 64%, rgb(30,156,255) 100%);
     position: fixed;
     left: 0;
     bottom: 0;
