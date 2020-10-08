@@ -42,8 +42,7 @@ function main(){
     }
 
     speedSlider.addEventListener("click", function(){
-        interval = 51 - Number(speedSlider.value)/2;
-        interval = interval/arraySize;
+        interval = 21 - Number(speedSlider.value)/5;
     });
 
     arrayBtn.addEventListener("click", function(){
@@ -75,7 +74,7 @@ function initArray(amount){
         var marginStr = width*1.85*i + "vw";
         div.style.marginLeft = marginStr;
         div.style.borderLeft = width + "vw rgba(0, 0, 255, 0.596) solid";
-        div.style.height = Math.floor(72*Math.random() + 5) + "%"
+        div.style.height = (72*Math.random() + 5) + "%"
         barDiv.appendChild(div);
     } 
 
