@@ -13,6 +13,7 @@ var bars = document.querySelectorAll(".bar");
 var running = false;
 var arraySize = arraySize = 2 + Number(sizeSlider.value)*3;
 var interval = 5;
+var timeout;
 
 main();
 
@@ -95,12 +96,11 @@ function runAnimation(sorter){
         disableButtons();
         animation = new Visualizer(sorter); 
         animation.runAnimation(); 
-        setTimeout(finishAnimation, interval*animation.swaps.length);
+        timeout = setTimeout(finishAnimation, interval*animation.swaps.length);
     }  
 }
 
 function finishAnimation(){
-    console.log("finishing")
     running = false;
     runBtn.value = "Visualize!";
     enableButtons();
@@ -201,8 +201,8 @@ class Visualizer{
                 bars[swaps[i-1][1]].style.borderColor = "rgba(0, 0, 255, 0.596)";
             }
             if(i >= swaps.length || !running){
-                console.log("in");
                 clearInterval(id);
+                clearTimeout(timeout);
                 return;
             }
             bars[swaps[i][0]].style.borderColor = "black";
@@ -212,7 +212,6 @@ class Visualizer{
             bars[swaps[i][0]].style.height = temp;
             i++;
             comparisonsText.textContent = "Comparisons: " + i; 
-            console.log("end");
         }
     }
 }
