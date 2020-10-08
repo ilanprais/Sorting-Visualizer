@@ -8,7 +8,7 @@ var complexityText = document.getElementById("complexity");
 var comparisonsText = document.getElementById("comparisons");
 var barDiv = document.querySelector(".bars");
 var running = false;
-var arraySize = 30;
+var arraySize = arraySize = 2 + Number(sizeSlider.value)*3;;
 
 main();
 
@@ -40,9 +40,10 @@ function main(){
     });
 
     sizeSlider.addEventListener("click", function(){
-        arraySize = 2 + Number(sizeSlider.value)*2;
-        console.log(sizeSlider.value);
+        arraySize = 2 + Number(sizeSlider.value)*3;
     });
+
+    flipBtn.addEventListener("click", flipArray);
 
     runBtn.addEventListener("click", function(){
         runAnimation(run, stats);
@@ -65,6 +66,16 @@ function initArray(amount){
         div.style.borderLeft = width + "vw rgba(0, 0, 255, 0.596) solid";
         div.style.height = Math.floor(72*Math.random() + 5) + "%"
         barDiv.appendChild(div);
+    } 
+}
+
+function flipArray(){
+    var bars = document.getElementsByClassName("bar");
+    console.log(bars);
+    for(let i = 0; i < arraySize/2 ; ++i){
+       var temp = bars[i].style.marginLeft;
+       bars[i].style.marginLeft = bars[arraySize - i - 1].style.marginLeft;
+       bars[arraySize - i - 1].style.marginLeft = temp;
     } 
 }
 
