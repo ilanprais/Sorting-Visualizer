@@ -202,19 +202,38 @@ input[name="runBtn"]:visited{
 .info{
     bottom: 82vh;
     font-size: 0.75em;
-    float: left;
     position: absolute;
     margin-top: 0.35vw;
     color:black;
 }
 
 .info h4[id="complexity"]{
+    font-weight: 500;
     margin-left: 18vw;
+    padding: 0 0.4vw 0.4vw 0.4vw;
+    border-bottom: 0.1vw rgba(226, 226, 231, 0.918) solid;
+}
+
+.info h4[id="wcomplexity"]{
+    font-weight: 500;
+    margin-left: 42vw;
+    padding: 0 0.4vw 0.4vw 0.4vw;
+    border-bottom: 0.1vw rgba(226, 226, 231, 0.918) solid;
+}
+
+.info h4[id="scomplexity"]{
+    font-weight: 500;
+    margin-left: 67.5vw;
+    padding: 0 0.4vw 0.4vw 0.4vw;
+    border-bottom: 0.1vw rgba(226, 226, 231, 0.918) solid;
 }
 
 .info h4[id="comparisons"]{
-    margin-left: 33vw;
+    font-weight: 500;
+    margin-left: 88.5vw;
     margin-top: 0.2vw;
+    padding: 0 0.4vw 0.4vw 0.4vw;
+    border-bottom: 0.1vw rgba(226, 226, 231, 0.918) solid;
 }
 
 .info:hover{
