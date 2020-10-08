@@ -6,7 +6,6 @@
 
 body{
     background-color: white;
-    font-family: "Montserrat";
     font-size: 1vw;
 }
 
@@ -198,6 +197,40 @@ input[name="runBtn"]:visited{
     left: 16.5%;
     margin-left: -3px;
     top: 17%;
+}
+
+.info{
+    bottom: 82vh;
+    font-size: 0.75em;
+    float: left;
+    position: absolute;
+    margin-top: 0.35vw;
+    color:black;
+}
+
+.info h4[id="complexity"]{
+    margin-left: 18vw;
+}
+
+.info h4[id="comparisons"]{
+    margin-left: 33vw;
+    margin-top: 0.2vw;
+}
+
+.info:hover{
+    color:rgba(0, 0, 0, 0.7);
+}
+
+.bars{
+    margin-left: 22vw;
+}
+
+.bar{
+    border-left: 1.5vw rgba(0, 0, 255, 0.596) solid;
+    height: 70%;
+    margin-left: 0px;
+    bottom: 0vw;
+    position: absolute;
 }
 
 
