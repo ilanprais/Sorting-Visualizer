@@ -11,7 +11,7 @@ var comparisonsText = document.getElementById("comparisons");
 var barDiv = document.querySelector(".bars");
 var bars = document.querySelectorAll(".bar");
 var running = false;
-var arraySize = arraySize = 2 + Number(sizeSlider.value)*3;
+var arraySize = 2 + Number(sizeSlider.value)*3;
 var interval = 5;
 var timeout;
 
@@ -40,6 +40,11 @@ function main(){
             updateStats([algorithms[i][2], algorithms[i][3], algorithms[i][4]]);
         });
     }
+
+    speedSlider.addEventListener("click", function(){
+        interval = 51 - Number(speedSlider.value)/2;
+        interval = interval/arraySize;
+    });
 
     arrayBtn.addEventListener("click", function(){
         initArray(arraySize);
@@ -96,7 +101,6 @@ function runAnimation(sorter){
         disableButtons();
         animation = new Visualizer(sorter); 
         animation.runAnimation(); 
-        timeout = setTimeout(finishAnimation, interval*animation.swaps.length);
     }  
 }
 
@@ -196,13 +200,11 @@ class Visualizer{
         var id = setInterval(doSwap, interval);
 
         function doSwap(){
-            if(i > 1){
-                bars[swaps[i-1][0]].style.borderColor = "rgba(0, 0, 255, 0.596)";
-                bars[swaps[i-1][1]].style.borderColor = "rgba(0, 0, 255, 0.596)";
-            }
+            clearBarColors();
             if(i >= swaps.length || !running){
+                clearBarColors();
                 clearInterval(id);
-                clearTimeout(timeout);
+                finishAnimation();
                 return;
             }
             bars[swaps[i][0]].style.borderColor = "black";
@@ -212,6 +214,13 @@ class Visualizer{
             bars[swaps[i][0]].style.height = temp;
             i++;
             comparisonsText.textContent = "Comparisons: " + i; 
+        }
+
+        function clearBarColors(){
+            for(var bar of bars){
+                bar.style.borderColor = "rgba(0, 0, 255, 0.596)";
+                bar.style.borderColor = "rgba(0, 0, 255, 0.596)";
+            }
         }
     }
 }
