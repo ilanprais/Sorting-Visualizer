@@ -49,6 +49,8 @@ function initArray(amount){
 
     var width= 40/amount;
 
+    barDiv.innerHTML = "";
+
     for(let i = 0; i < amount; ++i){
         var div = document.createElement("div");
         div.className = "bar";
