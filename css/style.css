@@ -10,7 +10,7 @@ body{
 }
 
 .top{
-    height: 4vw;
+    height: 8.5vh;
     margin-top: 1.3%;
     margin-left: 1.3%;
     background-color: white;
@@ -24,12 +24,11 @@ body{
 }
 
 .button{
-    margin: 0.15vw;
+    margin: 0.15vw 0.15vw 1.8vh 0.15vw;
     width: 13vw;
-    height: 3.2vw;
+    height: 6.7vh;
     border: rgba(38,113,221,1);
     border: 0.2vw linear-gradient(90deg, rgba(37,76,145,0.9308765742625175) 30%, rgba(38,113,221,1) 64%, rgba(30,156,255,0.9420810560552346) 100%) solid;
-    margin-bottom: 0.8vw;
     background-color: white;
     background-position: center; 
     background-repeat: no-repeat;
@@ -63,9 +62,9 @@ input[name="runBtn"]:visited{
 
 .title{
     margin-left: 1.5vw;
-    margin-bottom: -0.3vw;
+    margin-bottom: -0.7vh;
     width: 13vw;
-    height: 2vw;
+    height: 4.5vh;
     background-color: white;
     text-align: center;
 }
@@ -74,7 +73,7 @@ input[name="runBtn"]:visited{
     margin-left: 1.5vw;
     width: 13vw;
     -webkit-appearance: none;
-    height: 2vw;
+    height: 4.2vh;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
@@ -86,7 +85,7 @@ input[name="runBtn"]:visited{
     -webkit-appearance: none;
     appearance: none;
     width: 2vw;
-    height: 2vw;
+    height: 4vh;
     background: rgb(39,62,143);
     cursor: pointer;
 }
@@ -96,10 +95,9 @@ input[name="runBtn"]:visited{
 }
 
 .title2{
-    margin-bottom: 0vw;
-    margin-top: -0.7vw;
+    margin-top: -1.4vh;
     width: 13vw;
-    height: 2vw;
+    height: 4.5vh;
     background-color: white;
     text-align: center;
 }
@@ -113,9 +111,9 @@ input[name="runBtn"]:visited{
 .algos li {
     float: left;
     width: 6.2vw;
-    height: 4.4vw;
+    height: 9.2vh;
     margin-right: 0.6vw;
-    margin-bottom: 0.6vw;
+    margin-bottom: 1.3vh;
     position: relative;
   }
 
@@ -132,11 +130,11 @@ input[name="runBtn"]:visited{
 .algos label {
     color:rgb(39,62,143);
     background: white;
-    border: 2px rgb(39,62,143) solid;
+    border: 0.15vw rgb(39,62,143) solid;
     border-radius: 0.15em;
     text-align: center;
     font-size: 1.2em;
-    padding-top: 0.65vw;
+    padding-top: 1.5vh;
 }
 
 .algos input[type="radio"] {
@@ -154,18 +152,17 @@ input[name="runBtn"]:visited{
 .title3{
     margin-left: 1.5vw;
     width: 13vw;
-    height: 2vw;
+    height: 4.2vh;
     background-color: white;
     text-align: center;
 }
 
 .array .button{
     margin-left: 1.5vw;
-    margin-top: 1.8vw;
     font-size: 1.5em;
     background-color: #313649;
     color: white;
-    height: 2.5vw; 
+    height: 5.4vh; 
 }
 
 .array .button:hover{
@@ -175,7 +172,7 @@ input[name="runBtn"]:visited{
 }
 
 .array .slider{
-    margin-top: 1.6vw;
+    margin-top: 3.3vh;
 }
 
 .array .slider::-webkit-slider-thumb {
@@ -234,10 +231,6 @@ input[name="runBtn"]:visited{
     margin-top: 0.2vw;
     padding: 0 0.4vw 0.4vw 0.4vw;
     border-bottom: 0.1vw rgba(226, 226, 231, 0.918) solid;
-}
-
-.info:hover{
-    color:rgba(0, 0, 0, 0.7);
 }
 
 .bars{
