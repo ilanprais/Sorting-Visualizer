@@ -21,14 +21,14 @@
     </header>
     <main>
         <!--Side Menu-->
-            <aside id = "side" class="menu">
+            <aside id = "menu" class="menu">
                 <div class = "controls">
-                    <input class="button" type="submit" value="Visualize!" name="runBtn">
+                    <input class="button" id="runBtn" type="submit" value="Visualize!" name="runBtn">
                     <br/>
                     <div class="title">
                         <p>Animation Speed</p>
                     </div> 
-                    <input class="slider" type="range" min="1" max="100" value="50" name="rnBtn">
+                    <input class="slider" id="spdBtn" type="range" min="1" max="100" value="50" name="rnBtn">
                 </div>
                 <ul class = "algos">
                     <p class="title2">Sorting Algorithm</p>
@@ -64,16 +64,25 @@
                     <div class="title3">
                         <p>Array Size</p>
                     </div> 
-                    <input class="slider" type="range" min="1" max="100" value="50" name="rnBtn">
+                    <input class="slider" id="sizeBtn" type="range" min="1" max="100" value="50" name="sizeBtn">
                     <br/>
-                    <input class="button" type="submit" value="New Array" name="arrayBtn">
+                    <input class="button" id="arrayBtn" type="submit" value="New Array" name="arrayBtn">
                     <br/>
-                    <input class="button" type="submit" value="flip Array" name="flipBtn">
+                    <input class="button" id="flipBtn" type="submit" value="Flip Array" name="flipBtn">
                     <br/>
                 </div>
                 <div class="seperator"></div>
             </aside>
         <!--Main Window-->
+        <div class="info">
+            <h4 id="complexity">Average Time Complexity: O(n<sup>2</sup>)</h4>
+        </div>
+        <div class="info">
+            <h4 id="comparisons">Comparisons: 0</h4>
+        </div>
+        <br/>
+        <section class="bars">
+        </section>
 
     </main>
     <footer id="footer">
@@ -83,4 +92,5 @@
         </div>
     </footer>
 </body>
+<script src="script/main.js"></script>
 </html>
