@@ -60,6 +60,24 @@ input[name="runBtn"]:visited{
     border: 2px rgb(39,62,143) solid;
 }
 
+input[name="stopBtn"]{
+    margin-left: 1.5vw;
+    margin-top: 1.2vw;
+    font-size: 1.5vw;
+    color:rgb(39,62,143);
+    background: white;
+    border: 0.2vw rgb(39,62,143) solid;
+}
+
+input[name="stopBtn"]:hover{
+    margin-left: 1.5vw;
+    margin-top: 1.2vw;
+    font-size: 1.5vw;
+    color:rgb(0, 0, 0);
+    background: white;
+    border: 0.2vw rgb(39,62,143) solid;
+}
+
 .title{
     margin-left: 1.5vw;
     margin-bottom: -0.7vh;
