@@ -27,7 +27,7 @@ Each sorting algorithm was written in a seperate *Sorter* class (BubbleSorter, M
 sorts a standard number array, but adds all the array changes to an *animations* array which will be used later in the *Visualizer* to animate the changes in
 real time.
 
-The *Visulizer* class is responsible for visulizing a given sorting algorithm. it recieves an algorithm. *calls sort(number array, animations)*, and uses the *animations*
+The *Visulizer* class is responsible for visulizing a given sorting algorithm. it recieves an algorithm, calls *sort(number array, animations)*, and uses the *animations*
 array which just got filled to animate the array changes on the bars that are the screen (*Strategy* DP). In this way, additional sorting algorithms can be implemented in the future, or even a different visualization of the algorithm can be added, with very minor changes to the code.
 
 
