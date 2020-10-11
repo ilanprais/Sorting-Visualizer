@@ -56,8 +56,8 @@ class SortingVisulizer{
                 bars[animations[i].vals[1]].style.borderColor = "black";
             }
             if(animations[i].swap){
-                bars[animations[i].vals[0]].style.borderColor = "green";
-                bars[animations[i].vals[1]].style.borderColor = "green";
+                bars[animations[i].vals[0]].style.borderColor = "black";
+                bars[animations[i].vals[1]].style.borderColor = "black";
                 var temp = bars[animations[i].vals[0]].style.height;
                 bars[animations[i].vals[0]].style.height = this.bars[animations[i].vals[1]].style.height;
                 bars[animations[i].vals[1]].style.height = temp;

@@ -42,8 +42,7 @@ function main(){
     }
 
     speedSlider.addEventListener("click", function(){
-        visualizer.interval = (1 - Number(speedSlider.value)/100);
-        visualizer.interval = (4 + 100*visualizer.interval)*50/(sizeSlider.value + 1);
+        visualizer.interval = getSpeed(speedSlider.value, sizeSlider.value);
     });
 
     arrayBtn.addEventListener("click", function(){
@@ -52,6 +51,8 @@ function main(){
 
     sizeSlider.addEventListener("click", function(){
         arraySize = 1 + Number(sizeSlider.value)*3;
+        visualizer.interval = getSpeed(speedSlider.value, sizeSlider.value);
+
     });
 
     flipBtn.addEventListener("click",  ArrayManager.flipArray);
@@ -61,4 +62,9 @@ function main(){
     });
 
     return 0;
+}
+
+function getSpeed(speedSldr, sizeSldr){
+    var temp = (1 - Number(speedSldr)/100);
+    return (4 + 100*temp)*50/(sizeSldr + 1);
 }
