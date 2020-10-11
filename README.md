@@ -1,3 +1,3 @@
 # Sorting-Visualizer
 
-https://ilanprais.github.io/Sorting-Visualizer/index.html
+https://ilanprais.github.io/Sorting-Visualizer/
