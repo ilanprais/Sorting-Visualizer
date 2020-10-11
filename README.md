@@ -31,5 +31,5 @@ The *Visulizer* class is responsible for visulizing a given sorting algorithm. i
 array which just got filled to animate the array changes on the bars that are the screen (*Strategy* DP). In this way, additional sorting algorithms can be implemented in the future, or even a different visualization of the algorithm can be added, with very minor changes to the code.
 
 
-
-**Visit Website At**  https://ilanprais.github.io/Sorting-Visualizer/
+*Visit the website at*:
+https://ilanprais.github.io/Sorting-Visualizer/
