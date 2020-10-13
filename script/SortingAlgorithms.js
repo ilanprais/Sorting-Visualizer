@@ -177,27 +177,33 @@ class HeapSorter{
     }
     
     heapify(arr, n, i, animations){
-            var largest = i; 
-            var l = 2*i + 1; 
-            var r = 2*i + 2; 
-      
-            if (l < n && arr[l] > arr[largest]) {
+        var largest = i; 
+        var l = 2*i + 1; 
+        var r = 2*i + 2; 
+    
+        if (l < n){
+            animations.push(new AnimationInfo([l, largest], true, false, false));
+            if(arr[l] > arr[largest]) { 
                 largest = l; 
             }
-      
-            if (r < n && arr[r] > arr[largest]){
+        }    
+    
+        if (r < n){
+            animations.push(new AnimationInfo([r, largest], true, false, false));
+            if(arr[r] > arr[largest]){
                 largest = r; 
             }
-      
-            if (largest != i){ 
-                animations.push(new AnimationInfo([i, largest], true, true, false));
-                var swap = arr[i]; 
-                arr[i] = arr[largest]; 
-                arr[largest] = swap; 
-      
-                this.heapify(arr, n, largest, animations); 
-            } 
+        }
     
-            return arr;
+        if (largest != i){ 
+            animations.push(new AnimationInfo([i, largest], true, true, false));
+            var swap = arr[i]; 
+            arr[i] = arr[largest]; 
+            arr[largest] = swap; 
+    
+            this.heapify(arr, n, largest, animations); 
+        } 
+
+        return arr;
     }
 }
